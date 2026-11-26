@@ -1,0 +1,12 @@
+# Saidas de build (o GitHub Actions gera tudo de novo a cada release)
+/target/
+/installer/target/
+/dist/
+*.pdb
+
+# Editores e sistema
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store

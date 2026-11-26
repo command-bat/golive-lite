@@ -1,0 +1,11 @@
+pub mod auth;
+#[cfg(feature = "mod_ferramentas")]
+pub mod doc_html;
+pub mod protocol;
+#[cfg(feature = "mod_ferramentas")]
+pub mod room_tools;
+#[cfg(feature = "mod_amigos")]
+pub mod social;
+pub mod signaling;
+pub mod updater;
+pub mod webrtc;

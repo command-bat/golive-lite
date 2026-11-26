@@ -1,0 +1,14 @@
+{
+  "modifications": [
+    { "id": "ferramentas", "name": "Ferramentas", "description": "Ferramentas colaborativas na sala (lousa, enquete, roleta, notas, código, calculadora, docs e planilhas)", "status": "active", "version": "0.1.2", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "permissoes_chamada", "name": "Permissões de chamada", "description": "Gerenciamento e permissões da sala (admins, cargos, banimentos, silenciar e limite)", "status": "active", "version": "0.1.2", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "perfil", "name": "Perfil", "description": "Perfis, banners, selos, estatísticas e pontos na sala e na tela inicial", "status": "active", "version": "0.1.2", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "amigos", "name": "Amigos", "description": "Lista de amigos, pedidos de amizade, busca por usuário, bloqueios e quem está online", "status": "active", "version": "0.1.2", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "temas", "name": "Temas", "description": "", "status": "coming-soon", "version": "0.1.0", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "loja", "name": "Loja de cosméticos", "description": "", "status": "coming-soon", "version": "0.1.0", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "grupos", "name": "Grupos", "description": "", "status": "coming-soon", "version": "0.1.0", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "mensagens", "name": "Mensagens diretas", "description": "", "status": "coming-soon", "version": "0.1.0", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "paginas_golive", "name": "Páginas do Go Live", "description": "Salas, perfis e as outras páginas do site sem sair da chamada", "status": "coming-soon", "version": "0.1.0", "downloadUrl": null, "fileName": null, "sha256": null },
+    { "id": "gravacao", "name": "Gravação e clipes", "description": "", "status": "coming-soon", "version": "0.1.0", "downloadUrl": null, "fileName": null, "sha256": null }
+  ]
+}

@@ -1,0 +1,16 @@
+[package]
+name = "golive-lite-setup"
+version = "0.1.2"
+edition = "2021"
+description = "Instalador e desinstalador nativo Win32 para o Go Live - Lite (Go Live Lite - Desktop)"
+
+[[bin]]
+name = "golive-lite-setup"
+path = "src/main.rs"
+
+[dependencies]
+flate2 = { version = "1.1", default-features = false, features = ["rust_backend"] }
+serde_json = "1"
+
+[build-dependencies]
+flate2 = { version = "1.1", default-features = false, features = ["rust_backend"] }

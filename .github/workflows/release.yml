@@ -1,0 +1,48 @@
+# Publica uma versao do Go Live - Lite quando uma tag `vX.Y.Z` e enviada.
+#
+# O app e o setup procuram as atualizacoes na ultima release deste repositorio, pelos nomes
+# dos arquivos: golive-lite-core.exe, golive-lite-mods.exe, Go-Live-Lite-Setup.exe,
+# modifications.json e SHA256SUMS.txt (gerados pelo build-installer.ps1 em dist/release).
+#
+# O texto da release vem do RELEASE_NOTES.md. Nele:
+#   obrigatoria: sim        -> atualizacao obrigatoria para todos
+#   versao-minima: 0.1.0    -> obriga so quem esta abaixo dessa versao
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Conferir se a tag bate com a versao do Cargo.toml
+        shell: pwsh
+        run: |
+          $v = [regex]::Match((Get-Content Cargo.toml -Raw), '(?m)^version\s*=\s*"([^"]+)"').Groups[1].Value
+          if ("v$v" -ne "${{ github.ref_name }}") {
+            throw "A tag ${{ github.ref_name }} nao bate com a versao do Cargo.toml (v$v). Mude a versao no Cargo.toml e no installer/Cargo.toml."
+          }
+
+      - name: Compilar app, modificacoes e instalador
+        shell: powershell
+        env:
+          GOLIVE_LITE_GITHUB_REPO: ${{ github.repository }}
+        run: .\build-installer.ps1
+
+      - name: Publicar a release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Go Live - Lite ${{ github.ref_name }}
+          body_path: RELEASE_NOTES.md
+          files: dist/release/*
